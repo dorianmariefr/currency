@@ -32,6 +32,7 @@ gem "slim-rails"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
+gem "barnes"
 
 group :development, :test do
   gem "byebug"

@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")
+    meta(content="width=device-width,initial-scale=1" name="viewport")
+
+    title
+      - if content_for?(:title)
+        => content_for(:title)
+        ' |
+      = t(".title")
+
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+
+  body.max-w-xl.mx-auto.p-4.bg-dark.text-white
+    h1.font-bold.mb-4= link_to t(".title"), root_url, class: "underline"
+
+    - if content_for?(:title)
+      h2.mb-4.font-bold= content_for(:title)
+
+    = yield

@@ -1,12 +1,17 @@
 {
-  "name": "app",
-  "private": "true",
+  "name": "currency",
+  "private": true,
   "dependencies": {
-    "@hotwired/stimulus": "^3.0.1",
-    "@hotwired/turbo-rails": "^7.1.0",
-    "esbuild": "^0.14.8"
+    "@hotwired/stimulus": "*",
+    "@hotwired/turbo-rails": "*",
+    "autoprefixer": "*",
+    "esbuild": "*",
+    "postcss": "*",
+    "run-parallel": "*",
+    "tailwindcss": "*"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
   }
 }
