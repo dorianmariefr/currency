@@ -1,3 +1,3 @@
-Rails.application.routes.draw do
-  root "pages#index"
-end
+# frozen_string_literal: true
+
+Rails.application.routes.draw { root "pages#index" }
