@@ -1,0 +1,17 @@
+- title
+
+= form_for @user do |f|
+  .mb-4
+    = f.label :name, t(".name")
+    = f.text_field :name, autocomplete: "name"
+
+  .mb-4
+    = f.label :password, t(".password")
+    = f.password_field :password, autocomplete: "new-password"
+
+  .mb-4
+    => f.label :slug, t(".slug")
+    span.text-gray-400= t(".optional")
+    = f.text_field :slug, autocomplete: "username"
+
+  p= f.submit t(".submit"), class: "button"

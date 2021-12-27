@@ -1,0 +1,12 @@
+- title
+
+= form_for :session, url: session_path do |f|
+  .mb-4
+    = f.label :name_or_slug, t(".name_or_slug")
+    = f.text_field :name_or_slug, autocomplete: "username"
+
+  .mb-4
+    = f.label :password, t(".password")
+    = f.password_field :password, autocomplete: "current-password"
+
+  p= f.submit t(".submit"), class: "button"

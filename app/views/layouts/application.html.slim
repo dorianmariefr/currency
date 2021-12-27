@@ -16,9 +16,22 @@ html
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
 
   body.max-w-xl.mx-auto.p-4.bg-dark.text-white
-    h1.font-bold.mb-4= link_to t(".title"), root_url, class: "underline"
+    menu
+      .inline-block=> link_to t(".title"), root_url, class: "font-bold"
+      - if current_user
+        => link_to current_user.name, current_user
+        => button_to t(".log_out"), session_path, method: :delete, class: "underline", form_class: "inline-block"
+      - else
+        => link_to t(".register"), new_user_path
+        => link_to t(".log_in"), new_session_path
 
     - if content_for?(:title)
-      h2.mb-4.font-bold= content_for(:title)
+      h2= content_for(:title)
+
+    - if alert.present?
+      p.text-red-400= alert
+
+    - if notice.present?
+      p.text-green-400= notice
 
     = yield

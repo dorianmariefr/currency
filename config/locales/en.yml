@@ -1,7 +1,30 @@
 en:
+  sessions:
+    new:
+      title: Log in
+      name_or_slug: Name or username
+      password: Password
+      submit: Log in
+    create:
+      notice: Successfully logged in
+      wrong_name_or_slug: Wrong name or username
+      wrong_password: Wrong password
   pages:
     index:
       title: Home
   layouts:
     application:
       title: Currency
+      register: Register
+      log_in: Log in
+      log_out: Log out
+  users:
+    new:
+      title: Register
+      submit: Register
+      name: Name
+      password: Password
+      slug: Username
+      optional: "(optional)"
+    create:
+      notice: Successfully registered

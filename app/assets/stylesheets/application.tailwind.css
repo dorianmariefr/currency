@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  @apply underline;
+}
+
+menu, h1, h2, h3, h4, h5, h6, p {
+  @apply mb-4;
+}
+
+input[type=text],
+input[type=password] {
+  @apply rounded bg-gray-100 p-2 w-full text-black;
+}
+
+input[type=submit] {
+  @apply cursor-pointer;
+}
+
+.button {
+  @apply rounded bg-green-400 p-2 text-black;
+}
+
+.button:hover {
+  @apply bg-green-300;
+}
+
+.button:focus {
+  @apply bg-green-200;
+}
